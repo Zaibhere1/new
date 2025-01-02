@@ -1,75 +1,27 @@
-import { Link, Stack } from "expo-router";
 import React from "react";
-import {
-  ImageBackground,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { ImageBackground, Pressable, Text, View } from "react-native";
+import { Link } from "expo-router";
 
 const Index = () => {
   return (
-    <View style={styles.container}>
-      {/* <Stack.Screen
-        name="index"
-        options={{
-          headerShown: false,
-          title: "Home",
-        }}
-      /> */}
+    <View className="flex-1 bg-white items-center justify-center">
       <ImageBackground
-        style={styles.Image}
         source={require("@/assets/images/new.png")}
+        className="w-full h-full flex-1 justify-center"
       >
-        <Text style={styles.text}>Welcome to the Home Page</Text>
-        <Link href="/contact" style={{ marginHorizontal: "auto" }} asChild>
-          <Pressable style={styles.button}>
-            <Text style={styles.buttontext}>Contact Us</Text>
+        <Text className="text-black text-2xl font-bold bg-gray-200/50 text-center">
+          Welcome to the Zattrack
+        </Text>
+        <Link href="/SignUp" asChild>
+          <Pressable className="bg-gray-200/50 p-4 rounded-md m-4 w-1/2 self-center">
+            <Text className="text-black text-xl font-bold bg-gray-200/50 text-center underline underline-offset-8 ">
+              Signup / Register
+            </Text>
           </Pressable>
         </Link>
       </ImageBackground>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  Image: {
-    width: "100%",
-    flex: 1,
-    height: "100%",
-    justifyContent: "center",
-  },
-  text: {
-    color: "black",
-    fontSize: 20,
-    fontWeight: "bold",
-    backgroundColor: "rgba(243, 230, 230, 0.5)",
-    textAlign: "center",
-  },
-  buttontext: {
-    color: "black",
-    fontSize: 20,
-    fontWeight: "bold",
-    backgroundColor: "rgba(243, 230, 230, 0.5)",
-    textAlign: "center",
-    textDecorationLine: "underline",
-  },
-
-  button: {
-    backgroundColor: "rgba(243, 230, 230, 0.5)",
-    padding: 10,
-    borderRadius: 5,
-    margin: 10,
-    width: "50%",
-    alignSelf: "center",
-  },
-});
 
 export default Index;

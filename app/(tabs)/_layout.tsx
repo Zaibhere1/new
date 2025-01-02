@@ -7,6 +7,8 @@ import { IconSymbol } from "@/components/ui/IconSymbol";
 import TabBarBackground from "@/components/ui/TabBarBackground";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
+import { AntDesign, Ionicons } from "@expo/vector-icons";
+import "@/global.css";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -15,11 +17,11 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
-        tabBarInactiveTintColor: Colors[colorScheme ?? "light"].tint,
         headerShown: true,
         headerTitleAlign: "center",
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
+        tabBarActiveBackgroundColor: "trasnparent",
         tabBarStyle: Platform.select({
           ios: {
             // Use a transparent background on iOS to show the blur effect
@@ -30,24 +32,35 @@ export default function TabLayout() {
         }),
       }}
     >
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="index"
         options={{
           title: "Home",
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="house.fill" color={color} />
-          ),
+          tabBarIcon: ({ focused }) =>
+            focused ? (
+              <Ionicons name="home-outline" size={24} color="black" />
+            ) : (
+              <AntDesign name="home" size={24} color="white" />
+            ),
+          tabBarActiveTintColor: "black",
+          tabBarInactiveTintColor: "white",
         }}
       />
       <Tabs.Screen
-        name="contact"
+        name="SignUp"
         options={{
-          title: "Contact Us ",
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="paperplane.fill" color={color} />
+          title: "SignUp",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "people-circle" : "people-circle-outline"}
+              size={24}
+              color={focused ? "black" : "white"}
+            />
           ),
+          tabBarActiveTintColor: "black",
+          tabBarInactiveTintColor: "white",
         }}
-      />
+      /> */}
     </Tabs>
   );
 }
