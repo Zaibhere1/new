@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <Navbar>
       <View className="justify-center">
-        <View className="flex-1 bg-gray-100">
+        <View className="flex flex-col bg-gray-100 gap-2">
           <View className="bg-indigo-500 p-6">
             <Text className="text-3xl text-white font-semibold">
               Welcome to Home
@@ -19,9 +19,9 @@ const Home = () => {
             </Text>
           </View>
 
-          <View className="flex-1 justify-center items-center mt-8">
+          <View className="justify-center items-center mt-8">
             <Image
-              className="w-64 h-64 rounded-lg"
+              className="w-64placeholder h-64 rounded-lg"
               source={{ uri: "https://via.placeholder.com/300" }}
             />
             <Text className="text-lg text-gray-800 mt-4">
@@ -29,8 +29,7 @@ const Home = () => {
             </Text>
           </View>
 
-          {/* Button Section */}
-          <View className="p-6">
+          <View className="p-6 pt-10">
             <TouchableOpacity
               className="bg-indigo-600 py-3 rounded-full"
               onPress={handlePress}

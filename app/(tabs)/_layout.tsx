@@ -17,8 +17,9 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
-        headerShown: true,
-        headerTitleAlign: "center",
+        headerShown: false,
+        tabBarShowLabel: true,
+        headerTitleAlign: "left",
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
         tabBarActiveBackgroundColor: "trasnparent",
@@ -31,36 +32,6 @@ export default function TabLayout() {
           default: {},
         }),
       }}
-    >
-      {/* <Tabs.Screen
-        name="index"
-        options={{
-          title: "Home",
-          tabBarIcon: ({ focused }) =>
-            focused ? (
-              <Ionicons name="home-outline" size={24} color="black" />
-            ) : (
-              <AntDesign name="home" size={24} color="white" />
-            ),
-          tabBarActiveTintColor: "black",
-          tabBarInactiveTintColor: "white",
-        }}
-      />
-      <Tabs.Screen
-        name="SignUp"
-        options={{
-          title: "SignUp",
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name={focused ? "people-circle" : "people-circle-outline"}
-              size={24}
-              color={focused ? "black" : "white"}
-            />
-          ),
-          tabBarActiveTintColor: "black",
-          tabBarInactiveTintColor: "white",
-        }}
-      /> */}
-    </Tabs>
+    ></Tabs>
   );
 }
